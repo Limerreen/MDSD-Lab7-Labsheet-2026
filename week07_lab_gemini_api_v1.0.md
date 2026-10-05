@@ -461,9 +461,14 @@ flutter run
 
 > ✅ **Checkpoint 0.1** ถ่ายภาพหน้าจอ 2 ภาพ คือ (ก) หน้า Home ที่แสดงรายการสินค้าจริงจาก API และ (ข) หน้า Checkout ที่มีสินค้าที่เพิ่มไว้ เป็นหลักฐานว่าโปรเจกต์ตั้งต้นถูกต้องสมบูรณ์ก่อนเริ่มทำเนื้อหา Gemini API ต่อ
 
-```text
-บันทึกรูปผลลัพธ์ที่นี่
-```
+``text
+<img width="537" height="972" alt="image" src="https://github.com/user-attachments/assets/53915034-2ae1-41da-a2a6-4d43ceaf90a7" />
+
+<img width="510" height="957" alt="image" src="https://github.com/user-attachments/assets/88ec13b5-d3aa-49d0-bf88-3ee13b2b2cdd" />
+
+<img width="516" height="945" alt="image" src="https://github.com/user-attachments/assets/d13ad0a5-265a-4d63-9dd7-94a1903d1144" />
+
+``
 
 > ⚠️ ถ้าหน้าจอ Home แสดง Error เช่น "ไม่สามารถโหลดรายการสินค้าได้ (สถานะ 523)" ไม่ใช่ปัญหาจากไฟล์ที่คัดลอกมา แต่เป็น Fake Store API (fakestoreapi.com) ล่มชั่วคราว (Error ของ Cloudflare ที่แปลว่าเซิร์ฟเวอร์ต้นทางเข้าไม่ถึง) ให้รอแล้วลองใหม่ หรือแจ้งอาจารย์/TA เพื่อขอไฟล์ `ItemRepositoryMock` สำรองไว้ทดสอบโดยไม่ง้อเครือข่าย
 

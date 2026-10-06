@@ -551,9 +551,20 @@ flutter run
 
 > ✅ **Checkpoint 2.1** รันแอปด้วยคำสั่ง `flutter run --dart-define=GEMINI_API_KEY=your_key` ถ่ายภาพหน้าจอ Debug Console และหน้า SnackBar ที่แสดงข้อความคำตอบจาก Gemini และอธิบายด้านล่าง ว่า `.timeout()` ที่ตั้งไว้กับ Gemini API (20 วินาที) ต่างจากที่ตั้งไว้กับ OpenWeather API ในสัปดาห์ที่แล้ว (10 วินาที) อย่างไร และทำไมจึงต่างกัน (อ้างอิงบทหนังสือเรียนหัวข้อ 7.3)
 
-```text
-บันทึกผลลัพธ์ที่นี่
-```
+``text
+<img width="310" height="670" alt="image" src="https://github.com/user-attachments/assets/f568aad5-d457-43dc-9a26-b62b403f7e8e" />
+
+<img width="838" height="345" alt="image" src="https://github.com/user-attachments/assets/9509ab5a-7f21-4127-bb44-27da54d03658" />
+
+**คำอธิบายความแตกต่างของ `.timeout()` ระหว่าง Gemini API (20 วินาที) และ OpenWeather API (10 วินาที) (อ้างอิงบทหนังสือเรียนหัวข้อ 7.3)**
+
+1. **ความซับซ้อนของภาระงานบนเซิร์ฟเวอร์ (Workload & Processing Time):**
+   - **OpenWeather API (10 วินาที):** เป็นบริการประเภท Information Retrieval ที่ดึงข้อมูลสภาพอากาศที่มีการจัดเก็บหรือแคช (Cache) ไว้ล่วงหน้าในฐานข้อมูลอยู่แล้ว (Traditional CRUD / Lookup) ใช้เวลาประมวลผลสั้นมาก หากเซิร์ฟเวอร์ไม่ตอบกลับภายใน 10 วินาที มักเกิดจากปัญหาเครือข่ายขัดข้อง จึงสามารถตัดการเชื่อมต่อได้เร็ว
+   - **Gemini API (20 วินาที):** เป็นการประมวลผลด้วย Large Language Model (Generative AI) ซึ่งเป็นงานคำนวณเชิงลึก (Deep Neural Network Inference) ต้องผ่านกระบวนการ Tokenization และสังเคราะห์เนื้อหาใหม่ทีละคำ (Token-by-token Generation) ซึ่งใช้ทรัพยากรการประมวลผลและเวลามากกว่า API ทั่วไปหลายเท่า จึงจำเป็นต้องตั้ง Timeout เผื่อไว้สูงกว่า (20 วินาที) เพื่อไม่ให้ตัดการเชื่อมต่อไปก่อนที่โมเดลจะประมวลผลเสร็จสิ้น
+
+2. **ประสบการณ์ผู้ใช้งาน (User Experience):**
+   - การกำหนด Timeout เหมาะสมกับประเภทงาน ช่วยป้องกันข้อผิดพลาด Client Timeout ขณะที่โมเดลกำลัง Generate คำตอบ และยังช่วยให้แอปพลิเคชันไม่ค้าง (ANR) ในกรณีที่เกิดปัญหาคอขวดบนเซิร์ฟเวอร์
+``
 
 ---
 

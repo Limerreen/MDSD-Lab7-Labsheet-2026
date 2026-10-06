@@ -499,9 +499,13 @@ flutter run
 
 > ✅ **Checkpoint 1.1** ถ่ายภาพหน้าจอ Google AI Studio ที่แสดงรูปภาพที่แนบ Prompt ที่ใช้ และผลลัพธ์ JSON ที่ได้ จากนั้นทดลองรันซ้ำอีก 2 ครั้งด้วยภาพและ Prompt เดิม
 
-```text
-บันทึกรูปผลลัพธ์ที่นี่
-```
+``text
+<img width="978" height="602" alt="image" src="https://github.com/user-attachments/assets/605ec8d4-c4f1-4873-9613-5780808f5c46" />
+
+<img width="920" height="292" alt="image" src="https://github.com/user-attachments/assets/5d6cbafb-8f4a-49e7-80c5-3a3346a2457a" />
+
+
+``
 
 ### ขั้นตอนที่ 1.2: ทดลองเปิดใช้ Structured Output ใน AI Studio
 

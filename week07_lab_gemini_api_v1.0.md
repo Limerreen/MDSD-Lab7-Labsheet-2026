@@ -513,9 +513,20 @@ flutter run
 
 > ✅ **Checkpoint 1.2** ถ่ายภาพหน้าจอที่แสดงการตั้งค่า Structured Output และผลลัพธ์ที่ได้ อธิบายว่าผลลัพธ์ที่ได้ต่างจากตอนไม่เปิด Structured Output ในขั้นตอน 1.1 อย่างไร (อ้างอิงบทหนังสือเรียนหัวข้อ 7.4)
 
-```text
-บันทึกผลลัพธ์ที่นี่
-```
+``text
+<img width="786" height="717" alt="image" src="https://github.com/user-attachments/assets/073518a0-55f9-4fd9-8858-eeff26ab7224" />
+
+<img width="946" height="490" alt="image" src="https://github.com/user-attachments/assets/2b1264e5-fb92-4cec-b960-f1cda6c65917" />
+
+
+### บันทึกผลลัพธ์ Checkpoint 1.2 การทดสอบ Structured Output
+
+จากการเปรียบเทียบผลลัพธ์ระหว่างการสั่งงานผ่าน Prompt ปกติ (ขั้นตอน 1.1) และการเปิดใช้งาน Structured Output (ขั้นตอน 1.2) ตามเนื้อหาในหนังสือเรียนหัวข้อ 7.4 มีข้อแตกต่างสำคัญดังนี้
+
+ในขั้นตอน 1.1 ที่สั่งผ่าน Prompt เพียงอย่างเดียว ผลลัพธ์ขึ้นอยู่กับการทำนายคำของโมเดล มีความคลาดเคลื่อนเรื่องชื่อฟิลด์หรือโครงสร้าง JSON แต่ในขั้นตอน 1.2 พอเปิดใช้ Structured Output ตัวโมเดลจะควบคุมด้วย Grammar Constraints ในระดับการถอดรหัส (Decoding) ทำให้ได้ผลลัพธ์ที่มีฟิลด์ `title`, `category` และ `description` ครบตาม `string` ที่ระบุไว้ใน Schema 
+
+รในขั้นตอน 1.1 ผลลัพธ์อาจมี Markdown Backticks (````json ... ````) หรือข้อความเกริ่นนำปนมาด้วย แต่ในขั้นตอน 1.2 ผลลัพธ์ที่ได้จะเป็น Raw JSON โดยตรง ทำให้สามารถนำไปแปลงข้อมูลด้วย `jsonDecode()` ใน Flutter ต่อได้โดยไม่เกิด Runtime Error
+``
 
 ---
 
